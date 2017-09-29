@@ -1,0 +1,118 @@
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Variable</th>
+      <th>Pipe</th>
+      <th>Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{nombre}}</td>
+      <td>uppercase</td>
+      <td>{{nombre | uppercase}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{nombre}}</td>
+      <td>lowercase</td>
+      <td>{{nombre | lowercase}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{nombre}}</td>
+      <td>slice</td>
+      <td>{{nombre | slice: 3}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{nombre}}</td>
+      <td>slice:0:3</td>
+      <td>{{nombre | slice:0:3}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{arreglo}}</td>
+      <td>slice:1:5</td>
+      <td>{{arreglo | slice:1:5}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{PI}}</td>
+      <td>number:'3.0-0</td>
+      <td>{{PI | number:'3.0-4'}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{a}}</td>
+      <td>%</td>
+      <td>{{a | percent}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{a}}</td>
+      <td>% : '2.2-4'</td>
+      <td>{{a | percent : '2.2-4'}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{a}}</td>
+      <td>Currency</td>
+      <td>{{a *200 | currency}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{a}}</td>
+      <td>Currency</td>
+      <td>{{a *200 | currency:'CLP':true:'.0-3'}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{fecha}}</td>
+      <td>Fecha</td>
+      <td>{{fecha | date:'yyyy-MM-dd'}}</td>
+    </tr>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{fecha}}</td>
+      <td>Fecha  Locale </td>
+      <td>{{fecha | date:'MMMM - dd'}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">1</th>
+      <td>{{nombre2}}</td>
+      <td>Capitalizado </td>
+      <td>{{nombre2 | capitalizado}}</td>
+    </tr>
+
+    <tr>
+      <th scope="row">1</th>
+      <td>{{nombre2}}</td>
+      <td>contrasena {{activar}} <br>
+        <button
+          (click)="activar = !activar"
+        type="button" class="btn btn-warning" name="button">
+          Activar / Desactivar
+        </button>
+      </td>
+      <td>{{nombre2 | contrasena:activar}}</td>
+    </tr>
+
+  </tbody>
+</table>
+<hr />
+<h3>Slice</h3>
+
+<ul>
+    <li *ngFor="let item of arreglo | slice:7:20">{{item}}</li>
+</ul>
+
+
+<hr>
+<h2>YouTube</h2>
+<iframe width="560" height="315" [src]="video | domseguro:'https://www.youtube.com/embed/'" frameborder="0" allowfullscreen></iframe>
+</div>
